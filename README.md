@@ -205,5 +205,4 @@ Run the queries in `Bussiness Analysis Using SQL/sql_query_analysis.sql` against
 
 ## Author
 
-**Kelompok 4** — Data Analysis project.
-Repository: <https://github.com/jansv7/customer-shopping-behavior-analysis>
+Agustinus Janssen
