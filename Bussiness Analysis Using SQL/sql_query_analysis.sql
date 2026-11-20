@@ -63,7 +63,7 @@ count(customer_id) as total_orders,
 row_number() over (partition by category order by count(customer_id) desc) as item_rank
 from customer
 group by category, item_purchased
-);
+)
 
 select item_rank, category, item_purchased, total_orders
 from item_counts
