@@ -19,7 +19,7 @@ limit 5;
 select shipping_type, round(avg(purchase_amount_usd), 2)
 from customer
 where shipping_type in ('Standard', 'Express')
-group by shipping_type
+group by shipping_type;
 
 --Q5. Do subscribed customer spend more? Compare average spend and total revenue
 -- between subscribers and non-subscribers
@@ -53,7 +53,7 @@ from customer
 
 select customer_segment, count(*) as "Number of Customers"
 from customer_type
-group by customer_segment
+group by customer_segment;
 
 --Q8. What are the top 3 most purchased products within each category?
 with item_counts as (
@@ -63,7 +63,7 @@ count(customer_id) as total_orders,
 row_number() over (partition by category order by count(customer_id) desc) as item_rank
 from customer
 group by category, item_purchased
-)
+);
 
 select item_rank, category, item_purchased, total_orders
 from item_counts
